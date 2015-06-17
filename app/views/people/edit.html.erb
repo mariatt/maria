@@ -1,0 +1,19 @@
+<h1>Edit this person</h1>
+
+ <% @person.errors.full_messages.each do |message| %>
+ <%= message %><hr/>
+ <% end %>
+
+<%= form_for @person do |f| %>
+
+<%= f.label :first_name %>
+<%= f.text_field :first_name %><br/>
+<%= f.label :last_name %>
+<%= f.text_field :last_name %><br/>
+<%= f.label :dob %>
+<%= f.date_field :dob %><br/>
+<%= f.label :biography %>
+<%= f.text_area :biography %><br/>
+<%= f.button %>
+
+<% end %>

@@ -1,0 +1,22 @@
+<h1>All People</h1>
+
+<table>
+	<tr>
+		<th>Name</th>
+		<!--<th>Last Name</th>-->
+		<th>DOB</th>
+		<th>Biography</th>
+		<th>Edit</th>
+	</tr>
+	<% @people.each do |person|  %>
+		<tr>
+			<td><%= link_to person, person_path(person.id) %></td>
+			<!--<td><%= person.last_name %></td>-->
+			<td><%= person.dob %></td>
+			<td><%= person.biography %></td>
+			<td><%= link_to "edit", edit_person_path(person.id) %></td>
+		</tr>
+	<% end %>
+</table>
+<p>Add a <%= link_to "person", new_person_path %> to the list.</p>
+<p>View ALL our <%= link_to "publicaitons", publications_path %>.</p>

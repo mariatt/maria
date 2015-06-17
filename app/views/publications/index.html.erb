@@ -1,0 +1,24 @@
+<h1>All Publications</h1>
+
+<table>
+<tr>
+    <th>Title</th>
+    <th>Year</th>
+    <th>Author</th>
+    <th>Edit</th>
+
+</tr>
+
+<% @publications.each do |pub| %>
+
+<tr>
+    <td><%= "#{pub.title}" %></td>
+    <td><%= "#{pub.year}" %></td>
+    <td><%= pub.person %></td>
+    <td><%= link_to "Edit", edit_publication_path(pub.id) %></td>
+</tr>
+<% end %>
+</table>
+
+<p>Create new <%= link_to "publication", new_publication_path %>.</p>
+<p>View ALL our <%= link_to "people", people_path %>.</p>

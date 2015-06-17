@@ -1,0 +1,21 @@
+<h1>Enter NEW publication </h1>
+
+<% @publication.errors.full_messages.each do |message| %>
+ <%= message %><hr/>
+ <% end %>
+
+<%= form_for @publication do |f| %>
+
+<%= f.label :title %>
+<%= f.text_field :title %><br/>
+<%= f.label :year %>
+<%= f.number_field :year %><br/>
+<%= f.label :person_id %>
+<!-- <%= f.number_field :person_id  %>-->
+<%= f.select(:person_id, Person.all.collect {|p| [ "#{p.first_name} #{p.last_name}", p.id ] }, { include_blank: true }) %>
+<br/>
+<br/>
+<%= f.button %>
+
+
+<% end %>

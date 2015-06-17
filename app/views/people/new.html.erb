@@ -1,0 +1,21 @@
+<h1>Add new Person's Details</h1>
+
+<!-- form_for is a set rails function to create a form based on fields in the table @person and the |f| means for every field we specify -->
+
+ <% @person.errors.full_messages.each do |message| %>
+ <%= message %><hr/>
+ <% end %>
+
+<%= form_for @person do |f| %>
+
+<%= f.label :first_name %>
+<%= f.text_field :first_name %><br/>
+<%= f.label :last_name %>
+<%= f.text_field :last_name %><br/>
+<%= f.label :dob %>
+<%= f.date_field :dob %><br/>
+<%= f.label :biography %>
+<%= f.text_area :biography %><br/>
+<%= f.button %>
+
+<% end %>

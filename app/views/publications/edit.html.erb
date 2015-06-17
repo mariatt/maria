@@ -1,0 +1,17 @@
+<h1>Edit this publication</h1>
+
+<h2>for <%= @publication.person %></h2>
+
+ <% @publication.errors.full_messages.each do |message| %>
+ <%= message %><hr/>
+ <% end %>
+
+<%= form_for @publication do |f| %>
+
+<%= f.label :title %>
+<%= f.text_field :title %><br/>
+<%= f.label :year %>
+<%= f.number_field :year %><br/><br/>
+<%= f.button %>
+
+<% end %>
